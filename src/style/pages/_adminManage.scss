@@ -1,21 +1,24 @@
 $bgColor: #fbf8ef;
-$maintitleColor: #f7c845;
-$mainSubtitleColor: #FFA978;
+$maintitleColor: #555;
+$mainSubtitleColor: #CC113C;
 $title1Color: #007552;
 $title2Color: #62b45a;
 $title3Color: #fbf8ef;
 
 $sidebarBgColor: #ffd3c1;
-$contentColor: #007552;
+$contentColor: #555;
+$formTtlBg: #F7C845;
+$attention: #CC113C;
 
 $maintitleSize: 18px;
 $title1Size: 16px;
 $title2Size: 14px;
 $contentSize: 12px;
 
-$btnBgcolor: #007552;
+$btnBgcolor: #FFA978;
+$btnBgHcolor: #62b45a;
 $btnColor: #fbf8ef;
-$btnRadius: 10px;
+$btnRadius: 5px;
 $tagBGcolor: #E2E2E2;
 
 .msContainer {
@@ -35,8 +38,9 @@ $tagBGcolor: #E2E2E2;
     // height: 900px;
     // border: 1px solid blue;
     box-sizing: border-box;
-    overflow: scroll;
-    
+
+    // overflow: scroll;
+
     .msSideBar {
       // margin: auto;
       color: $title1Color;
@@ -46,16 +50,29 @@ $tagBGcolor: #E2E2E2;
       min-width: 20%;
       height: 100%;
       box-sizing: border-box;
-      
       // align-items: center;
       justify-content: center;
       font-size: $title1Size;
-      line-height: 3rem;
+      line-height: 3.3rem;
       position: fixed;
+      // border: 1px solid red;
+
+      .mng_logo {
+        margin-top: 30px;
+      }
+
+    
+      .admin_name {
+        color: $title2Color;
+        position: relative;
+        top: 15px;
+        left: 25%;
+        font-size: $title2Size;
+      }
 
       li {
         position: relative;
-        top: 35%;
+        top: 10%;
       }
 
       a {
@@ -63,12 +80,15 @@ $tagBGcolor: #E2E2E2;
         // top: 25%;
         text-decoration: none;
         color: $title1Color;
+        outline: none;
+        transition: ease .3s;
 
         &:hover {
           color: $title2Color;
           position: relative;
           top: 1px;
           left: 1px;
+
         }
 
         &:active {
@@ -83,12 +103,13 @@ $tagBGcolor: #E2E2E2;
       font-size: $maintitleSize;
       margin: 30px 0;
     }
+
     .manageSubTitle {
       color: $mainSubtitleColor;
       font-size: $title1Size;
       vertical-align: bottom;
       margin-left: 10px;
-     
+
     }
 
     .AdminMainContent {
@@ -108,23 +129,31 @@ $tagBGcolor: #E2E2E2;
         background: $btnBgcolor;
         color: $btnColor;
         border-radius: $btnRadius;
+        border: hidden;
         width: auto;
-        height: 35px;
-        // margin-bottom: 30px;
+        height: 30px;
+        transition: ease-in-out .3s;
 
         a {
           text-decoration: none;
           color: $title3Color;
         }
+
+        &:hover {
+          position: relative;
+          top: .08rem;
+          left: .08rem;
+          background: $btnBgHcolor;
+        }
       }
 
       .tableSection {
-        margin-top: 95px;
+        margin-top: 30px;
         height: 80%;
-        
+
         .amt-header {
           display: flex;
-          background: $maintitleColor;
+          background: $formTtlBg;
         }
 
         .amt-content {
@@ -192,7 +221,7 @@ $tagBGcolor: #E2E2E2;
           }
 
           .statusBtn:checked+.statusBtnLabel {
-            background: #62b45a;
+            background: $btnBgcolor;
           }
 
           .statusBtn:checked+.statusBtnLabel:after {

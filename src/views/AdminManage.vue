@@ -129,15 +129,12 @@
         </div>
       </section>
     </main>
-
   </div>
 </template>
-
-
-
 <script>
-import "@/js/adminManage";
-export default {};
+export default {
+  
+};
 </script>
 
 

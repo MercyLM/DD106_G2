@@ -33,7 +33,7 @@
 
     .ast-header {
         display: flex;
-        background: $maintitleColor;
+        background: $formTtlBg;
     }
 
     .ast-content {
@@ -102,7 +102,7 @@
             }
 
             .statusBtn:checked+.statusBtnLabel {
-                background: #62B45A;
+                background: $btnBgcolor;
             }
 
             .statusBtn:checked+.statusBtnLabel:after {

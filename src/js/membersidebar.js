@@ -1,13 +1,17 @@
 import $ from "jquery";
 
 window.addEventListener("load", function(){
-    $(function(){
-
-        // 點擊
+        var x=0;
         $("button.btn_drawer").on("click", function(){
-          // -open 的樣式切換
-          $(this).closest("aside.right_sidebar").toggleClass("-open");
+          
+          if(x == 0){
+            $('aside.left').css("transform","translateX(0%)");
+            x=1;
+          }else{
+            $('aside.left').css("transform","translateX(-93%)");
+            x=0;
+          }
+          
         });
-      
-      });
+        
 });

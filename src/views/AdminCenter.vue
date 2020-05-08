@@ -3,6 +3,8 @@
     <div class="msFrame">
       <aside class="msSideBar">
         <ul>
+          <img class="mng_logo" src="@/assets/LOGO.svg" alt />
+          <span class="admin_name">管理員</span>
           <li>
             <router-link to="/center/manage">管理員管理</router-link>
           </li>
