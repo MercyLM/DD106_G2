@@ -4,6 +4,10 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 const routes = [{
+    path: '*',
+    redirect: '/main'
+  },
+  {
     path: '/main',
     name: 'Home',
     component: () => import('@/views/Home.vue'),
@@ -17,31 +21,10 @@ const routes = [{
       name: "Index",
       component: () => import("@/views/BookIndex.vue")
     }, {
-      path: "bookSpring",
-      name: "BookSpring",
-      component: () => import("@/views/BookSpring.vue")
-    }, {
-      path: "bookSummer",
-      name: "BookSummer",
-      component: () => import("@/views/BookSummer.vue")
-    }, {
-      path: "bookFall",
-      name: "BookFall",
-      component: () => import("@/views/BookFall.vue")
-    }, {
-      path: "bookWinter",
-      name: "BookWinter",
-      component: () => import("@/views/BookWinter.vue")
-    }, {
-      path: "bookYear",
-      name: "BookYear",
-      component: () => import("@/views/BookYear.vue")
+      path: "bookContent",
+      name: "BookContent",
+      component: () => import("@/views/BookContent.vue")
     }]
-  },
-  {
-    path: '/main/blog-landing',
-    name: 'Blog-landing',
-    component: () => import('@/views/Blog-landing.vue'),
   },
   {
     path: '/main/blog-post',
@@ -49,9 +32,19 @@ const routes = [{
     component: () => import('@/views/Blog-post.vue'),
   },
   {
-    path: '/main/blog-post2',
+    path: '/main/blog',
     name: 'Blog-post2',
-    component: () => import('@/views/Blog-post2.vue'),
+    component: () => import('@/views/Blog-post2.vue')
+  },
+  {
+    path: '/main/blog/landing',
+    name: 'Blog-landing',
+    component: () => import('@/views/Blog-landing.vue'),
+  },
+  {
+    path: '/main/blog-post3',
+    name: 'Blog-post3',
+    component: () => import('@/views/Blog-post3.vue'),
   },
   {
     path: '/main/shop',
@@ -77,6 +70,9 @@ const routes = [{
         // children 指的是 member router（路由）內的"子頁"，例如網址只要符合 /member/information 就會嵌入 Member.vue 樣板及 Information.vue 元件
         path: 'information',
         name: 'Information',
+        meta: {
+          requiresAuth: true
+        },
         component: () => import('@/views/MemberInfo.vue'),
       },
       {
@@ -218,5 +214,11 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
+
+const routerPush = VueRouter.prototype.push;
+
+VueRouter.prototype.push = function push(location) {
+  return routerPush.call(this, location).catch(error => error);
+};
 
 export default router;

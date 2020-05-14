@@ -24,7 +24,7 @@
                     <br>
                     <input type="text">
                     <br>
-                    <textarea name="" id="" cols="30" rows="6"></textarea>
+                    <textarea name="" id="" cols="20" rows="6"></textarea>
                     <br>
                     <button>選擇檔案</button>
                     <span>未選擇任何檔案</span>
@@ -34,7 +34,7 @@
                         <div class="tap2">xxxxx</div>
                         <div class="tap3">xxxxxx</div>
                         <div class="tap4">xxxxxxx</div>
-                        <div class="tap5">xxxxxxxx</div>
+                        <div class="tap5">xxxxxxx</div>
                     </div>
                     <div class="submit_button">
                         <div class="cancel">

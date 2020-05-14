@@ -1,13 +1,14 @@
 $bgColor: #fbf8ef;
 $maintitleColor: #555;
-$mainSubtitleColor: #CC113C;
+$mainSubtitleColor: #888;
 $title1Color: #007552;
 $title2Color: #62b45a;
 $title3Color: #fbf8ef;
 
-$sidebarBgColor: #ffd3c1;
+$sidebarBgColor: #fbf8ef;
 $contentColor: #555;
-$formTtlBg: #F7C845;
+$formTtlBg: #DCE07A;
+// #F7C845;
 $attention: #CC113C;
 
 $maintitleSize: 18px;
@@ -15,8 +16,8 @@ $title1Size: 16px;
 $title2Size: 14px;
 $contentSize: 12px;
 
-$btnBgcolor: #FFA978;
-$btnBgHcolor: #62b45a;
+$btnBgcolor: #62b45a;
+$btnBgHcolor: #FFA978;
 $btnColor: #fbf8ef;
 $btnRadius: 5px;
 $tagBGcolor: #E2E2E2;
@@ -35,7 +36,6 @@ $tagBGcolor: #E2E2E2;
     color: $contentColor;
     display: flex;
     width: 100%;
-    // height: 900px;
     // border: 1px solid blue;
     box-sizing: border-box;
 
@@ -46,13 +46,12 @@ $tagBGcolor: #E2E2E2;
       color: $title1Color;
       display: flex;
       background: $sidebarBgColor;
-      // min-width: 25%;
       min-width: 20%;
       height: 100%;
       box-sizing: border-box;
       // align-items: center;
       justify-content: center;
-      font-size: $title1Size;
+      font-size: $title2Size;
       line-height: 3.3rem;
       position: fixed;
       // border: 1px solid red;
@@ -88,7 +87,6 @@ $tagBGcolor: #E2E2E2;
           position: relative;
           top: 1px;
           left: 1px;
-
         }
 
         &:active {
@@ -149,7 +147,6 @@ $tagBGcolor: #E2E2E2;
 
       .tableSection {
         margin-top: 30px;
-        height: 80%;
 
         .amt-header {
           display: flex;
@@ -165,14 +162,18 @@ $tagBGcolor: #E2E2E2;
         }
 
         .adminManageTab {
-          table-layout: fixed;
+          table-layout: auto;
         }
 
         th {
-          width: 100px;
-          padding: 20px 20px;
+          width: 90px;
+          padding: 15px 20px;
           text-align: left;
           color: $contentColor;
+
+          &:first-child {
+            width: 60px;
+          }
 
           &:last-child {
             padding-left: 10%;
@@ -180,11 +181,15 @@ $tagBGcolor: #E2E2E2;
         }
 
         td {
-          width: 100px;
-          padding: 20px;
+          width: 90px;
+          padding: 15px 20px;
           text-align: left;
           vertical-align: middle;
           color: $contentColor;
+
+          &:first-child {
+            width: 60px;
+          }
 
           &:last-child {
             padding-left: 10%;
@@ -211,7 +216,7 @@ $tagBGcolor: #E2E2E2;
           .statusBtnLabel:after {
             content: '';
             position: absolute;
-            top: 2px;
+            top: 1.5px;
             left: 2px;
             width: 15px;
             height: 15px;
