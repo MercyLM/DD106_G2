@@ -21,9 +21,25 @@ const routes = [{
       name: "Index",
       component: () => import("@/views/BookIndex.vue")
     }, {
-      path: "bookContent",
-      name: "BookContent",
-      component: () => import("@/views/BookContent.vue")
+      path: "bookSpring",
+      name: "BookSpring",
+      component: () => import("@/views/BookSpring.vue")
+    }, {
+      path: "bookSummer",
+      name: "BookSummer",
+      component: () => import("@/views/BookSummer.vue")
+    }, {
+      path: "bookFall",
+      name: "BookFall",
+      component: () => import("@/views/BookFall.vue")
+    }, {
+      path: "bookWinter",
+      name: "BookWinter",
+      component: () => import("@/views/BookWinter.vue")
+    }, {
+      path: "bookYear",
+      name: "BookYear",
+      component: () => import("@/views/BookYear.vue")
     }]
   },
   {
@@ -214,11 +230,5 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
-
-const routerPush = VueRouter.prototype.push;
-
-VueRouter.prototype.push = function push(location) {
-  return routerPush.call(this, location).catch(error => error);
-};
 
 export default router;
