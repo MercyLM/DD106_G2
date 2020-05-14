@@ -11,8 +11,8 @@
           <ul>
             <li>果粉編號</li>
             <li>帳號</li>
-            <!-- <li>密碼</li> -->
-            <!-- <li>修改密碼</li> -->
+            <li>密碼</li>
+            <li>修改密碼</li>
             <li>果粉姓名</li>
             <li>暱稱</li>
             <li>性別</li>
@@ -21,32 +21,16 @@
           </ul>
         </div>
         <div class="information_right">
-          <span>
-            <p>{{ no }}</p></span
-          >
-          <span>
-            <p>{{ acc }}</p></span
-          >
-          <span>
-            <p>{{ name }}</p></span
-          >
-          <span>
-            <p>{{ nick }}</p></span
-          >
-          <span>
-            <p>{{ gender }}</p></span
-          >
-          <span>
-            <p>0{{ phone }}</p></span
-          >
-          <span>
-            <p>{{ email }}</p></span
-          >
-
-          <!-- <p>XXXXXXXXXX</p> -->
-          <!-- <input type="text" /> -->
-          <!-- <br /> -->
-
+          <p>{{no}}</p>
+          <p>{{acc}}</p>
+          <p>XXXXXXXXXX</p>
+          <input type="text" />
+          <br />
+          <p>{{name}}</p>
+          <p>{{nick}}</p>
+          <p>{{gender}}</p>
+          <p>{{phone}}</p>
+          <p>{{email}}</p>
           <div class="submit_button">
             <div class="correct">
               <p>確定</p>
@@ -67,15 +51,15 @@ export default {
       nick: "",
       gender: "",
       phone: "",
-      email: "",
+      email: ""
     };
   },
-  mounted() {
+  created() {
     const api = "/api/api_memberStatus.php";
 
     this.$http
       .post(api)
-      .then((res) => {
+      .then(res => {
         const data = res.data;
 
         if (data != "") {
@@ -95,7 +79,7 @@ export default {
         }
       })
       // eslint-disable-next-line no-console
-      .catch((err) => console.log(err));
-  },
+      .catch(err => console.log(err));
+  }
 };
 </script>

@@ -182,7 +182,7 @@
 
               <div class="card_content">
                 <div class="commodity_title">
-                  <div class="commodity_title_text">{{item.itemName}}</div>
+                  <div class="commodity_title_text">蜜蕉乾 零添加</div>
                 </div>
 
                 <div class="card_tag">
@@ -191,7 +191,7 @@
                 </div>
 
                 <div class="card_price">
-                  <span class="money">{{item.money}}</span>
+                  <span class="money">550</span>
                 </div>
 
                 <div class="buy">
@@ -524,14 +524,6 @@
 import $ from "jquery";
 import { gsap, TweenMax, Power1, Power3, TimelineMax, Linear } from "gsap";
 export default {
-  data() {
-    return {
-      item: {
-        money: 0,
-        itemName: ""
-      }
-    };
-  },
   mounted() {
     function showHideHam() {
       let filterPanel = document.getElementById("filterPanel");
@@ -626,26 +618,6 @@ export default {
         }
       });
     });
-    //反觸發item按鈕效果
-    $(".item_btn").mouseleave(function() {
-      var ibtn = $(this);
-      TweenMax.to(ibtn, 0.3, {
-        css: {
-          backgroundColor: "#fbf8ef",
-          color: "#007552"
-        }
-      });
-    });
-    //反觸發itembuynow按鈕效果
-    $(".buyNow").mouseleave(function() {
-      var buybtn = $(this);
-      TweenMax.to(buybtn, 0.3, {
-        css: {
-          backgroundColor: "#ffa978",
-          color: "#404040"
-        }
-      });
-    });
 
     //商品效果
     $(".box-top").hover(function() {
@@ -659,17 +631,6 @@ export default {
         y: 0
       });
     });
-
-    const api = "/api/api_item.php";
-
-    this.$http
-      .post(api)
-      .then(res => {
-        const data = res.data;
-        this.item.itemName = data.name;
-        this.item.money = data.price;
-      })
-      .catch(err => console.log(err));
   }
 };
 </script>

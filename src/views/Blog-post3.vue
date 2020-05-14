@@ -65,10 +65,7 @@
             <!--卡片區-->
             <!--卡片區-->
             <div class="blog-post3-card-area">
-              <router-link
-                to="/main/blog/landing"
-                class="woman-small-strawberry"
-              >
+              <div class="woman-small-strawberry">
                 <div></div>
                 <div>
                   <div>
@@ -105,11 +102,8 @@
                     </div>
                   </div>
                 </div>
-              </router-link>
-              <router-link
-                to="/main/blog/landing"
-                class="blog-post2-small-card"
-              >
+              </div>
+              <div class="blog-post2-small-card">
                 <div>
                   <img src="@/assets/blog-img/post/grape.png" />
                   <div>
@@ -155,11 +149,8 @@
                     </span>
                   </div>
                 </div>
-              </router-link>
-              <router-link
-                to="/main/blog/landing"
-                class="blog-post2-small-card"
-              >
+              </div>
+              <div class="blog-post2-small-card">
                 <div>
                   <img src="@/assets/blog-img/post/grape.png" />
                   <div>
@@ -205,11 +196,8 @@
                     </span>
                   </div>
                 </div>
-              </router-link>
-              <router-link
-                to="/main/blog/landing"
-                class="blog-post2-small-card"
-              >
+              </div>
+              <div class="blog-post2-small-card">
                 <div>
                   <img src="@/assets/blog-img/post/grape.png" />
                   <div>
@@ -255,11 +243,8 @@
                     </span>
                   </div>
                 </div>
-              </router-link>
-              <router-link
-                to="/main/blog/landing"
-                class="blog-post2-small-card"
-              >
+              </div>
+              <div class="blog-post2-small-card">
                 <div>
                   <img src="@/assets/blog-img/post/grape.png" />
                   <div>
@@ -305,11 +290,8 @@
                     </span>
                   </div>
                 </div>
-              </router-link>
-              <router-link
-                to="/main/blog/landing"
-                class="blog-post2-small-card"
-              >
+              </div>
+              <div class="blog-post2-small-card">
                 <div>
                   <img src="@/assets/blog-img/post/grape.png" />
                   <div>
@@ -355,11 +337,8 @@
                     </span>
                   </div>
                 </div>
-              </router-link>
-              <router-link
-                to="/main/blog/landing"
-                class="blog-post2-small-card"
-              >
+              </div>
+              <div class="blog-post2-small-card">
                 <div>
                   <img src="@/assets/blog-img/post/grape.png" />
                   <div>
@@ -405,11 +384,8 @@
                     </span>
                   </div>
                 </div>
-              </router-link>
-              <router-link
-                to="/main/blog/landing"
-                class="blog-post2-small-card"
-              >
+              </div>
+              <div class="blog-post2-small-card">
                 <div>
                   <img src="@/assets/blog-img/post/grape.png" />
                   <div>
@@ -455,11 +431,8 @@
                     </span>
                   </div>
                 </div>
-              </router-link>
-              <router-link
-                to="/main/blog/landing"
-                class="blog-post2-small-card"
-              >
+              </div>
+              <div class="blog-post2-small-card">
                 <div>
                   <img src="@/assets/blog-img/post/grape.png" />
                   <div>
@@ -505,11 +478,8 @@
                     </span>
                   </div>
                 </div>
-              </router-link>
-              <router-link
-                to="/main/blog/landing"
-                class="blog-post2-small-card"
-              >
+              </div>
+              <div class="blog-post2-small-card">
                 <div>
                   <img src="@/assets/blog-img/post/grape.png" />
                   <div>
@@ -555,11 +525,8 @@
                     </span>
                   </div>
                 </div>
-              </router-link>
-              <router-link
-                to="/main/blog/landing"
-                class="blog-post2-small-card vanish"
-              >
+              </div>
+              <div class="blog-post2-small-card">
                 <div>
                   <img src="@/assets/blog-img/post/grape.png" />
                   <div>
@@ -605,7 +572,7 @@
                     </span>
                   </div>
                 </div>
-              </router-link>
+              </div>
             </div>
             <!---->
             <!---->
@@ -1022,8 +989,6 @@
   }
 
   .woman-small-strawberry {
-    text-decoration: none;
-    color: #000;
     display: flex;
     width: 49.15%;
     margin-top: 1%;
@@ -1182,16 +1147,23 @@
   }
 
   .blog-post2-small-card {
-    &.vanish {
-      @media (max-width: 1300px) {
+    &.nine {
+      @media (max-width: 9999px) {
         display: none;
       }
-      @media (max-width: 900px) {
+      @media (max-width: 1879px) {
         display: inline-block;
       }
+      @media (max-width: 1400px) {
+        display: none;
+      }
+      @media (max-width: 1300px) {
+        display: inline-block;
+      }
+      @media (max-width: 900px) {
+        display: none;
+      }
     }
-    text-decoration: none;
-    color: #000;
     width: 24%;
     border: solid #007552 2px;
     @media (max-width: 1879px) {
