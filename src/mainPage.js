@@ -7,6 +7,9 @@ import VueAxios from "vue-axios";
 import "@/js/components";
 import "@/style/main.scss";
 
+
+
+
 Vue.config.productionTip = false;
 
 Vue.prototype.$http = axios;
@@ -18,9 +21,8 @@ new Vue({
   },
 }).$mount('#app');
 
-// 去哪裡、來自哪裡、下一個是哪裡
 router.beforeEach((to, from, next) => {
-
+  
   if (to.meta.requiresAuth) {
 
     const api = "/api/api_memberStatus.php";
