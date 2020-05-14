@@ -5,21 +5,16 @@ div.Registered {
     width: 87.2%;
     height: 100vh;
     vertical-align: top;
-<<<<<<< HEAD
 
     @include rwd(mobile) {
         width: 95%;
     }
 
-    >.Registered_head {
-=======
     >.Registered_head{
->>>>>>> 58b9d16f32b995a50df9b6b1eb1a10166694586d
         color: #F7C845;
         margin-top: 40px;
         margin-left: 40px;
         font-size: 30px;
-<<<<<<< HEAD
 
         @include rwd(large) {
             margin-left: 160px;
@@ -37,25 +32,18 @@ div.Registered {
         @include rwd(mobile) {
             margin-left: 20px;
         }
-=======
->>>>>>> 58b9d16f32b995a50df9b6b1eb1a10166694586d
     }
 
     >.Registered_bottom {
         display: block;
         text-align: center;
-<<<<<<< HEAD
 
         @include rwd(mobile) {
-=======
-        @include rwd(mobile){
->>>>>>> 58b9d16f32b995a50df9b6b1eb1a10166694586d
             display: block;
-    text-align: center;
-    width: 100%;
-    margin-left: 30px;
+            text-align: center;
+            width: 100%;
+            margin-left: 30px;
         }
-<<<<<<< HEAD
 
         >.bottom_form {
             margin-top: 100px;
@@ -73,13 +61,6 @@ div.Registered {
             }
 
             @include rwd(small) {
-=======
-        >.bottom_form{
-            margin-top: 180px;
-            line-height: 2;
-            font-size: 16px;
-            @include rwd(small){
->>>>>>> 58b9d16f32b995a50df9b6b1eb1a10166694586d
                 margin-top: 40px;
                 line-height: 1.8;
             }
@@ -127,14 +108,9 @@ div.Registered {
                 padding-right: 145px;
                 height: 500px;
                 width: 260px;
-<<<<<<< HEAD
                 line-height: 3.3;
 
                 @include rwd(medium) {
-=======
-                line-height: 3.14;
-                @include rwd(medium){
->>>>>>> 58b9d16f32b995a50df9b6b1eb1a10166694586d
                     width: 200px;
                     line-height: 3.3;
                 }
@@ -167,13 +143,10 @@ div.Registered {
                     right: 30px;
                     bottom: 10px;
                     line-height: 2.3;
-<<<<<<< HEAD
 
                     &:hover {
                         background-color: #62B45A;
                     }
-=======
->>>>>>> 58b9d16f32b995a50df9b6b1eb1a10166694586d
                 }
             }
         }
