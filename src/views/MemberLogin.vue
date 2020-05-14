@@ -16,10 +16,26 @@
                 <label>e-mail:</label>
               </div>
               <form class="forminputbox">
-                <input type="text" />
-                <input type="password" />
-                <input type="password" />
-                <input type="text" />
+                <input type="text" v-model="form.name" />
+                <input type="text" v-model="form.nick" />
+                <div class="from_gender">
+                  男
+                  <input type="radio" name="gender" v-model="form.gender" value="1" /> 女
+                  <input type="radio" name="gender" v-model="form.gender" value="2" />
+                  其他
+                  <input
+                    type="radio"
+                    name="gender"
+                    v-model="form.gender"
+                    value="0"
+                  />
+                </div>
+
+                <input type="text" v-model="form.acc" />
+                <input id="signupPsw" type="password" v-model="form.psw" @blur="checkPsw" />
+                <input id="signupRePsw" type="password" v-model="form.rePsw" @blur="checkPsw" />
+                <input type="text" v-model="form.email" />
+                <input type="text" v-model="form.phone" />
               </form>
             </div>
 
@@ -34,8 +50,8 @@
             <span>帳號:</span>
             <input type="text" placeholder="請輸入帳號" v-model="member.acc" />
             <br />
-            <span>密碼:</span>
-            <input type="password" placeholder="請輸入密碼"  v-model="member.psw" />
+            <label>密碼:</label>
+            <input type="password" placeholder="請輸入密碼" v-model="member.psw" />
             <br />
             <div class="signinsubmit" @click="login">
               <p>登入</p>
@@ -45,7 +61,7 @@
       </div>
       <div class="leftbox">
         <h1>已經是果粉了?</h1>
-        <img class="loginbutton" id="signin" src="@/assets/login.png" alt />
+        <img class="loginbutton" id="signin" src="@/assets/login.png" @click="changeSignin" alt />
       </div>
       <div class="rightbox">
         <h1>還不是果粉嗎?</h1>
@@ -79,6 +95,16 @@ export default {
       member: {
         acc: "",
         psw: ""
+      },
+      form: {
+        name: "",
+        nick: "",
+        acc: "",
+        psw: "",
+        rePsw: "",
+        email: "",
+        phone: "",
+        gender: ""
       }
     };
   },
@@ -87,7 +113,7 @@ export default {
       const login = "/api/api_memberLogin.php";
 
       this.$http
-        .post(login, JSON.stringify(this.member))
+        .post(api, JSON.stringify(this.member))
         .then(res => {
           const data = res.data;
 
@@ -111,6 +137,72 @@ export default {
         })
         // eslint-disable-next-line no-console
         .catch(err => console.log(err));
+    },
+    changeSignin: function() {
+      this.form = {
+        name: "",
+        nick: "",
+        acc: "",
+        psw: "",
+        rePsw: "",
+        email: "",
+        phone: "",
+        gender: ""
+      };
+    },
+    signup: function() {
+      const api = "/api/api_memberSignup.php";
+
+      for (let i in this.form) {
+        if (this.form[i] == "") {
+          alert("請檢查是否所有欄位都有輸入資料");
+          return;
+        }
+      }
+      
+      this.$http
+        .post(api, JSON.stringify(this.form))
+        .then(res => {
+          const data = res.data;
+
+          if(data.error){
+
+            // eslint-disable-next-line no-console
+            console.log(data.error);
+          }
+
+          if (data == 0) {
+            alert("註冊完成！");
+
+            this.form = {
+              name: "",
+              nick: "",
+              acc: "",
+              psw: "",
+              rePsw: "",
+              email: "",
+              phone: "",
+              gender: ""
+            };
+
+            $(".movebox").css("transform", "translateX(-10%)");
+            $(".signup").addClass("nodisplay");
+            $(".signin").removeClass("nodisplay");
+          } else if (data == 1) {
+            alert("此帳號已經被註冊過！");
+          }
+        });
+    },
+    checkPsw: function() {
+      const form = this.form;
+
+      if (form.rePsw != form.psw) {
+        document.getElementById("signupPsw").style.backgroundColor = "red";
+        document.getElementById("signupRePsw").style.backgroundColor = "red";
+      } else {
+        document.getElementById("signupPsw").style.backgroundColor = "";
+        document.getElementById("signupRePsw").style.backgroundColor = "";
+      }
     }
   }
 };

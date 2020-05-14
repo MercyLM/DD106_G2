@@ -57,7 +57,89 @@
 </template>
 <script>
 export default {
-  props: { page: Number },
+  props: { page: Number, contentType: Number },
+  data() {
+    return {
+      index: [
+        {
+          item: [
+            {
+              name: "梅子"
+            },
+            {
+              name: "李子"
+            },
+            {
+              name: "桃子"
+            },
+            {
+              name: "琵琶"
+            }
+          ]
+        },
+        {
+          item: [
+            {
+              name: "西瓜"
+            },
+            {
+              name: "芒果"
+            },
+            {
+              name: "火龍果"
+            },
+            {
+              name: "荔枝"
+            }
+          ]
+        },
+        {
+          item: [
+            {
+              name: "西瓜"
+            },
+            {
+              name: "芒果"
+            },
+            {
+              name: "火龍果"
+            },
+            {
+              name: "荔枝"
+            }
+          ]
+        },
+        {
+          item: [
+            {
+              name: "西瓜"
+            },
+            {
+              name: "芒果"
+            },
+            {
+              name: "火龍果"
+            },
+            {
+              name: "荔枝"
+            }
+          ]
+        }
+      ],
+      right: "Others",
+      left: "Spring"
+    };
+  },
+  created(){
+
+    this.changeContent();
+  },
+  computed: {
+    content: function() {
+      this.changeContent();
+      return this.index[this.contentType].item[Math.floor(this.page / 2)];
+    }
+  },
   methods: {
     content: function() {
       console.log(this.page);
