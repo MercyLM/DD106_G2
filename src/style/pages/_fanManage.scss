@@ -18,63 +18,57 @@
 }
 
 .aFanTableSection {
-
   .aft-header {
     display: flex;
     background: $formTtlBg;
-    width: 715px;
   }
 
   .aft-content {
     display: flex;
     background-color: #fff;
     height: 80%;
-    width: 715px;
+    overflow-x: auto;
+    margin-top: 0px;
   }
 
-  // .fanManageTab {
-  //     // table-layout: auto;
-  //     // width: 750px;
-  // }
+  .fanManageTab {
+    table-layout: auto;
+  }
 
   th {
-    width: 125px;
-    padding: 15px 0px;
-    text-align: center;
+    width: 100px;
+    padding: 15px 20px;
+    text-align: left;
     color: $contentColor;
-    box-sizing: border-box;
 
     &:first-child {
-      width: 90px;
+      width: 60px;
     }
 
-    // &:last-child {
-    //     padding-left: 5%;
-    // }
+    &:last-child {
+      padding-left: 5%;
+    }
   }
 
   td {
-    width: 125px;
-    padding: 15px 0px;
-    text-align: center;
+    width: 100px;
+    padding: 15px 20px;
+    text-align: left;
     vertical-align: middle;
     color: $contentColor;
-    box-sizing: border-box;
 
     &:first-child {
-      width: 90px;
+      width: 60px;
     }
 
     // &:last-child {
     //     padding-left: 10%;
     // }
 
-
-    .statusBtn[type=checkbox] {
+    .statusBtn[type="checkbox"] {
       height: 0;
       width: 0;
       visibility: hidden;
-
     }
 
     .statusBtnLabel {
@@ -87,11 +81,10 @@
       border-radius: 100px;
       position: relative;
       top: -6px;
-      left: 45px;
     }
 
     .statusBtnLabel:after {
-      content: '';
+      content: "";
       position: absolute;
       top: 1.5px;
       left: 2px;

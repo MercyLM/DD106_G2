@@ -1,54 +1,66 @@
-div.Registered{
+div.Registered {
     display: inline-block;
     color: #007552;
     background-color: #FBF8EF;
     width: 100%;
     height: auto;
     vertical-align: top;
-    @include rwd(mobile){
+
+    @include rwd(mobile) {
         width: 95%;
     }
-    >.Registered_head{
+
+    >.Registered_head {
         color: #F7C845;
         margin-top: 45px;
         margin-left: 300px;
         font-size: 30px;
-        @include rwd(large){
+
+        @include rwd(large) {
             margin-left: 160px;
             margin-bottom: 10px;
         }
-        @include rwd(medium){
+
+        @include rwd(medium) {
             margin-left: 130px;
         }
-        @include rwd(small){
+
+        @include rwd(small) {
             margin-left: 90px;
         }
-        @include rwd(mobile){
+
+        @include rwd(mobile) {
             margin-left: 20px;
         }
     }
-    >.Registered_bottom{
+
+    >.Registered_bottom {
         display: block;
         height: auto;
         text-align: center;
+
         @include rwd(mobile) {
             display: block;
             text-align: center;
             width: 100%;
             margin-left: 13px;
         }
-        >.bottom_form{
+
+        >.bottom_form {
             margin-top: 100px;
             margin-left: 190px;
             line-height: 2;
             font-size: 16px;
-            @include rwd(large){
+
+            @include rwd(large) {
                 margin-top: 90px;
             }
-            @include rwd(medium){
+
+            @include rwd(medium) {
                 margin-top: 90px;
                 margin-left: 70px;
             }
+
             @include rwd(small) {
                 margin-top: 40px;
                 margin-left: 40px;
@@ -64,29 +76,35 @@ div.Registered{
                 line-height: 2;
                 font-size: 16px;
             }
-            >.Registered_left{
+
+            >.Registered_left {
                 vertical-align: top;
                 display: inline-block;
                 background-color: #F7C845;
                 width: 260px;
                 height: 500px;
                 padding: 50px 0px;
-                @include rwd(medium){
+
+                @include rwd(medium) {
                     width: 200px;
                 }
-                @include rwd(small){
+
+                @include rwd(small) {
                     width: 100px;
                 }
-                @include rwd(mobile){
+
+                @include rwd(mobile) {
                     width: 25%;
                 }
-                >ul{
-                    >li{
+
+                >ul {
+                    >li {
                         padding: 10px 0;
                     }
                 }
             }
-            >.Registered_right{
+
+            >.Registered_right {
                 display: inline-block;
                 position: relative;
                 text-align: start;
@@ -96,6 +114,7 @@ div.Registered{
                 height: 500px;
                 width: 260px;
                 line-height: 3.3;
+
                 @include rwd(medium) {
                     width: 200px;
                     line-height: 3.3;
@@ -117,10 +136,12 @@ div.Registered{
                     width: 50%;
                     line-height: 3.3;
                 }
+
                 >label {
                     margin-right: 10px;
                 }
-                >.submit_button{
+
+                >.submit_button {
                     position: absolute;
                     border-radius: 5px;
                     background-color: #007552;
@@ -129,7 +150,8 @@ div.Registered{
                     right: 30px;
                     bottom: 10px;
                     line-height: 2.3;
-                    &:hover{
+
+                    &:hover {
                         background-color: #62B45A;
                     }
                 }
