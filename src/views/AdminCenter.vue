@@ -1,6 +1,6 @@
 <template>
   <div class="msContainer">
-    <div class="msFrame">
+    <!-- <div class="msFrame"> -->
       <aside class="msSideBar">
         <ul>
           <img class="mng_logo" src="@/assets/LOGO.svg" alt />
@@ -26,7 +26,7 @@
         </ul>
       </aside>
       <router-view />
-    </div>
+    <!-- </div> -->
   </div>
 </template>
 
