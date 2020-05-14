@@ -7,6 +7,9 @@ import VueAxios from "vue-axios";
 import "@/js/components";
 import "@/style/main.scss";
 
+
+
+
 Vue.config.productionTip = false;
 
 Vue.prototype.$http = axios;
