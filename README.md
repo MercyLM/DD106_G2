@@ -4,7 +4,7 @@
 
 ### 1、Vue（含 Vue-cli）
 ### 2、SCSS
-### 3、router（MPA、SPA）
+### 3、router
 ### 4、three.js
 ### 5、gsap
 
@@ -15,4 +15,4 @@
 
 ## 版本控制
 
-### GitHub
+### Git
