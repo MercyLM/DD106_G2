@@ -1,59 +1,33 @@
 div.FarmOrder {
     display: inline-block;
-    background-color: #FBF8EF;
-    width: 100%;
-    height: 100%;
-
-    @include rwd(large) {
-        height: auto;
-    }
+    color: #007552;
+    background-color: #fbf8ef;
+    width: calc(100% - 250px);
+    height: 100vh;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: 60px 40px;
 
     @include rwd(medium) {
-        height: 100%;
+        float: right;
+        width: calc(100% - 200px);
     }
 
     @include rwd(small) {
-        height: 100%;
-    }
-
-    @include rwd(mobile) {
-        height: auto;
+        float: none;
+        width: 100vw;
+        padding: 10% 5%;
     }
 
     .FarmOrder_head {
-        color: #F7C845;
-        margin-top: 45px;
-        margin-left: 300px;
-        font-size: 30px;
-        @include rwd(large){
-            margin-left: 180px;
-        }
-        @include rwd(medium){
-            margin-left: 140px;
-        }
-        @include rwd(small){
-            margin-left: 120px;
-        }
-        @include rwd(mobile){
-            margin-left: 20px;
-        }
+        color: #f7c845;
+        font-size: 3rem;
     }
 
     .plusbutton {
         display: block;
-        margin: 20px 0px 20px 300px;
-        @include rwd(large){
-            margin: 20px 0px 20px 180px;
-        }
-        @include rwd(medium){
-            margin: 20px 0px 20px 140px;
-        }
-        @include rwd(small){
-            margin: 20px 0px 20px 120px;
-        }
-        @include rwd(mobile){
-            margin: 20px 0px 20px 20px;
-        }
+        padding: 10px 0;
+
         >.plus {
             display: inline-block;
             border: 1px solid #007552;
@@ -72,187 +46,97 @@ div.FarmOrder {
 
     .FarmOrder_bottom {
         display: block;
-        height: auto;
-        width: 100%;
         text-align: center;
+
+        @include rwd(medium) {
+            display: block;
+            width: 100%;
+            padding-top: 10%;
+        }
+        @include rwd(small){
+            padding-top: 0%;
+        }
 
         >.list_1 {
             display: flex;
+            flex-direction: column;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
             height: auto;
-            text-align: start;
-            margin-left: 30%;
-            @include rwd(large){
-                margin-left: 25%;
+
+            @include rwd(large) {
+                margin-left: 0%;
             }
+
             @include rwd(medium) {
                 margin-left: 25%;
             }
 
             @include rwd(small) {
-                margin-left: 18%;
+                margin-left: 2%;
             }
 
             @include rwd(mobile) {
                 margin-left: 4%;
             }
-            
-            >.Ordernum{
-                width: 15%;
-                text-align: center;
-                background-color: white;
-                @include rwd(mobile){
-                    width: 20%;
-                }
-                >.title{
-                    background-color: #F7C845;
-                    padding: 20px 0px 20px 0px;
-                    @include rwd(mobile){
-                        padding: 20px 0px 20px 0px;
-                    }
-                }
-                >p{
-                    padding: 20px 0px 20px 0px;
-                    @include rwd(mobile){
-                        padding: 20px 0px 55px 0px;
-                    }
-                }
-            }
-            >.Ordername{
-                width: 15%;
-                text-align: center;
-                background-color: white;
+
+            .bottomheader {
+                display: flex;
+                background: #f7c845;
+                width: 90%;
                 @include rwd(large){
-                    width: 19.3%;
-                }
-                @include rwd(medium){
-                    width: 23.4%;
+                    width: 100%;
                 }
                 @include rwd(small){
-                    width: 28.5%;
-                }
-                @include rwd(mobile){
-                    width: 20%;
-                }
-                >.title{
-                    background-color: #F7C845;
-                    @include rwd(mobile){
-                        padding: 20px 0px 20px 0px;
-                    }
-                }
-                >p{
-                    padding: 20px 0px 20px 0px;
+                    width: 100%;
                 }
             }
-            >.Orderprice{
-                width: 15%;
-                text-align: center;
-                background-color: white;
-                @include rwd(mobile){
-                    width: 20%;
-                }
-                >.title{
-                    background-color: #F7C845;
-                    @include rwd(mobile){
-                        padding: 20px 0px 20px 0px;
-                    }
-                }
-                >p{
-                    padding: 20px 0px 20px 0px;
-                    @include rwd(mobile){
-                        padding: 36px 0px 38px 0px;
-                    }
-                }
-            }
-            >.Ordertime{
-                width: 15%;
-                text-align: center;
-                background-color: white;
+
+            .bottomcontent {
+                display: flex;
+                background-color: #fff;
+                height: 80%;
+                margin-top: 0;
+                width: 90%;
+                
                 @include rwd(large){
-                    width: 16.8%;
-                }
-                @include rwd(medium){
-                    width: 20.3%;
+                    width: 100%;
                 }
                 @include rwd(small){
-                    width: 24.7%;
-                }
-                @include rwd(mobile){
-                    width: 20%;
-                }
-                >.title{
-                    background-color: #F7C845;
-                    @include rwd(mobile){
-                        padding: 20px 0px 20px 0px;
-                    }
-                }
-                >p{
-                    padding: 20px 0px 20px 0px;
+                    width: 100%;
                 }
             }
-            >.Orderputon{
-                width: 10%;
+
+            .orderTab {
+                table-layout: auto;
+            }
+
+            th {
+                width: 287px;
+                padding: 15px 0;
                 text-align: center;
-                background-color: white;
-                @include rwd(small){
-                    width: 11.4%;
+                @include rwd(large){
+                    width: 130px;
                 }
                 @include rwd(mobile){
-                    width: 19%;
+                    width: 55px;
+                    font-size: 13px;
                 }
-                >.title{
-                    background-color: #F7C845;
-                    padding: 20px 0;
-                    @include rwd(mobile){
-                        padding: 20px 0px 20px 0px;
-                    }
-                }
-                >p{
-                    padding: 15.3px 0px 22.4px 0px;
-                    @include rwd(mobile){
-                        padding: 36px 0px 36px 0px;
-                    }
-                }
-                .statusBtn[type=checkbox] {
-                    height: 0;
-                    width: 0;
-                    visibility: hidden;
-                }
+            }
 
-                .statuslable {
-                    cursor: pointer;
-                    text-indent: -9999px;
-                    width: 35px;
-                    height: 19px;
-                    background: rgb(161, 161, 161);
-                    display: inline-block;
-                    border-radius: 100px;
-                    position: relative;
-                    top: 6px;
+            td {
+                width: 287px;
+                padding: 15px 0;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 16px;
+                @include rwd(large){
+                    width: 130px;
                 }
-
-                .statuslable:after {
-                    content: '';
-                    position: absolute;
-                    top: 1.5px;
-                    left: 2px;
-                    width: 15px;
-                    height: 15px;
-                    background: #fff;
-                    border-radius: 90px;
-                    transition: 0.3s;
-                }
-
-                .statusBtn:checked+.statuslable {
-                    background: #bada55;
-                }
-
-                .statusBtn:checked+.statuslable:after {
-                    left: calc(100% - 2px);
-                    transform: translateX(-100%);
-                }
-
-                .statuslable:active:after {
-                    width: 20px;
+                @include rwd(mobile){
+                    width: 55px;
+                    font-size: 13px;
                 }
             }
         }
@@ -263,7 +147,9 @@ div.FarmOrder {
             margin: auto;
             margin-top: 20px;
             margin-left: 13%;
-
+            @include rwd(large){
+                margin-left: 3%;
+            }
             @include rwd(medium) {
                 margin-left: 0px;
                 margin-bottom: 10px;
@@ -273,8 +159,9 @@ div.FarmOrder {
                 text-align: center;
                 margin-left: 30px;
             }
-            @include rwd(small){
-                margin-left: 13%;
+
+            @include rwd(small) {
+                margin-left: 4%;
             }
 
             >ul.pagination {

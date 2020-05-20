@@ -171,49 +171,57 @@
             <!--卡片區-->
             <!--卡片區-->
             <div class="blog-post2-card-area">
-              <div class="blog-post2-long-card">
-                <div>
-                  <img src />
-                </div>
-                <div>
+              <router-link
+                to="/main/blog/landing"
+                class="blog-post2-long-card-outer"
+                v-for="(i, index) in blogArrFilterTop"
+                :key="index"
+              >
+                <div class="blog-post2-long-card" @click="changePage(i)">
                   <div>
-                    <p>2020-04-08</p>
-                    <p>親子輕旅行 台北白石湖採草莓、 踏青一日遊</p>
-                    <p>
-                      <img src="@/assets/blog-img/blog-thumb.png" />
-                      <span>100</span>
-                      <img src="@/assets/blog-img/blog-tag.png" />
-                      <span>西瓜</span>
-                      <img src="@/assets/blog-img/blog-tag.png" />
-                      <span>果農心得</span>
-                    </p>
-                    <p>
-                      每年12月至5月的草區，區內種植草莓聞名，每年12月至5月的草區，區內種植草莓聞名，每年12月至5月的草區，區內種植草莓聞名，每年12月至5月的草莓產季來臨，的草莓園
-                    </p>
+                    <img src />
                   </div>
                   <div>
                     <div>
-                      <img src="@/assets/blog-img/blog-someoneshead.png" />
+                      <p>{{ i.date }}</p>
+                      <p>{{ i.title }}</p>
+                      <p>
+                        <img src="@/assets/blog-img/blog-thumb.png" />
+                        <span>100</span>
+                        <img src="@/assets/blog-img/blog-tag.png" />
+                        <span>西瓜</span>
+                        <img src="@/assets/blog-img/blog-tag.png" />
+                        <span>果農心得</span>
+                      </p>
+                      <p>
+                        {{ i.content }}
+                      </p>
                     </div>
                     <div>
-                      <div>蓬蓬草苺姨</div>
                       <div>
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
+                        <img src="@/assets/blog-img/blog-someoneshead.png" />
+                      </div>
+                      <div>
+                        <div>蓬蓬草苺姨</div>
+                        <div>
+                          <img src="@/assets/blog-img/blog-star.png" />
+                          <img src="@/assets/blog-img/blog-star.png" />
+                          <img src="@/assets/blog-img/blog-star.png" />
+                          <img src="@/assets/blog-img/blog-star.png" />
+                          <img src="@/assets/blog-img/blog-star.png" />
+                        </div>
+                      </div>
+                      <div>
+                        <span>+追蹤</span>
                       </div>
                     </div>
-                    <div>
-                      <span>+追蹤</span>
-                    </div>
                   </div>
                 </div>
-              </div>
+              </router-link>
               <!--小卡片-->
               <!--小卡片-->
               <!--小卡片-->
+
               <div class="blog-post2-small-card-container">
                 <!--<router-link
                   to="/main/blog/landing"
@@ -258,350 +266,54 @@
                     </div>
                   </div>
                 </router-link>
+
+                -->
                 <router-link
                   to="/main/blog/landing"
-                  class="blog-post2-small-card"
-                >
-                  <div>
-                    <img src="@/assets/blog-img/post/grape.png" />
-                    <div>
-                      <div>
-                        <img src="@/assets/blog-img/blog-thumb.png" />
-                      </div>
-                      <div>
-                        <span>100</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <p>2020-04-08</p>
-                    <p>親子輕旅行 台北白石湖採草莓、 踏青一日遊</p>
-                    <div>
-                      <img src="@/assets/blog-img/blog-tag.png" />
-                      <span>知識類</span>
-                    </div>
-                    <p>區內種植草莓聞名，每年12月至5月的草莓產季來臨，的...</p>
-                  </div>
-                  <div>
-                    <div>
-                      <img src="@/assets/blog-img/blog-someoneshead.png" />
-                    </div>
-                    <div>
-                      <span>蓬蓬草莓姨</span>
-                      <div>
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                      </div>
-                    </div>
-                    <div>
-                      <span>+追蹤</span>
-                    </div>
-                  </div>
-                </router-link>
-                <router-link
-                  to="/main/blog/landing"
-                  class="blog-post2-small-card"
-                >
-                  <div>
-                    <img src="@/assets/blog-img/post/grape.png" />
-                    <div>
-                      <div>
-                        <img src="@/assets/blog-img/blog-thumb.png" />
-                      </div>
-                      <div>
-                        <span>100</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <p>2020-04-08</p>
-                    <p>親子輕旅行 台北白石湖採草莓、 踏青一日遊</p>
-                    <div>
-                      <img src="@/assets/blog-img/blog-tag.png" />
-                      <span>知識類</span>
-                    </div>
-                    <p>區內種植草莓聞名，每年12月至5月的草莓產季來臨，的...</p>
-                  </div>
-                  <div>
-                    <div>
-                      <img src="@/assets/blog-img/blog-someoneshead.png" />
-                    </div>
-                    <div>
-                      <span>蓬蓬草莓姨</span>
-                      <div>
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                      </div>
-                    </div>
-                    <div>
-                      <span>+追蹤</span>
-                    </div>
-                  </div>
-                </router-link>
-                <router-link
-                  to="/main/blog/landing"
-                  class="blog-post2-small-card"
-                >
-                  <div>
-                    <img src="@/assets/blog-img/post/grape.png" />
-                    <div>
-                      <div>
-                        <img src="@/assets/blog-img/blog-thumb.png" />
-                      </div>
-                      <div>
-                        <span>100</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <p>2020-04-08</p>
-                    <p>親子輕旅行 台北白石湖採草莓、 踏青一日遊</p>
-                    <div>
-                      <img src="@/assets/blog-img/blog-tag.png" />
-                      <span>知識類</span>
-                    </div>
-                    <p>區內種植草莓聞名，每年12月至5月的草莓產季來臨，的...</p>
-                  </div>
-                  <div>
-                    <div>
-                      <img src="@/assets/blog-img/blog-someoneshead.png" />
-                    </div>
-                    <div>
-                      <span>蓬蓬草莓姨</span>
-                      <div>
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                      </div>
-                    </div>
-                    <div>
-                      <span>+追蹤</span>
-                    </div>
-                  </div>
-                </router-link>
-                <router-link
-                  to="/main/blog/landing"
-                  class="blog-post2-small-card"
-                >
-                  <div>
-                    <img src="@/assets/blog-img/post/grape.png" />
-                    <div>
-                      <div>
-                        <img src="@/assets/blog-img/blog-thumb.png" />
-                      </div>
-                      <div>
-                        <span>100</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <p>2020-04-08</p>
-                    <p>親子輕旅行 台北白石湖採草莓、 踏青一日遊</p>
-                    <div>
-                      <img src="@/assets/blog-img/blog-tag.png" />
-                      <span>知識類</span>
-                    </div>
-                    <p>區內種植草莓聞名，每年12月至5月的草莓產季來臨，的...</p>
-                  </div>
-                  <div>
-                    <div>
-                      <img src="@/assets/blog-img/blog-someoneshead.png" />
-                    </div>
-                    <div>
-                      <span>蓬蓬草莓姨</span>
-                      <div>
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                      </div>
-                    </div>
-                    <div>
-                      <span>+追蹤</span>
-                    </div>
-                  </div>
-                </router-link>
-                <router-link
-                  to="/main/blog/landing"
-                  class="blog-post2-small-card"
-                >
-                  <div>
-                    <img src="@/assets/blog-img/post/grape.png" />
-                    <div>
-                      <div>
-                        <img src="@/assets/blog-img/blog-thumb.png" />
-                      </div>
-                      <div>
-                        <span>100</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <p>2020-04-08</p>
-                    <p>親子輕旅行 台北白石湖採草莓、 踏青一日遊</p>
-                    <div>
-                      <img src="@/assets/blog-img/blog-tag.png" />
-                      <span>知識類</span>
-                    </div>
-                    <p>區內種植草莓聞名，每年12月至5月的草莓產季來臨，的...</p>
-                  </div>
-                  <div>
-                    <div>
-                      <img src="@/assets/blog-img/blog-someoneshead.png" />
-                    </div>
-                    <div>
-                      <span>蓬蓬草莓姨</span>
-                      <div>
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                      </div>
-                    </div>
-                    <div>
-                      <span>+追蹤</span>
-                    </div>
-                  </div>
-                </router-link>
-                <router-link
-                  to="/main/blog/landing"
-                  class="blog-post2-small-card"
-                >
-                  <div>
-                    <img src="@/assets/blog-img/post/grape.png" />
-                    <div>
-                      <div>
-                        <img src="@/assets/blog-img/blog-thumb.png" />
-                      </div>
-                      <div>
-                        <span>100</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <p>2020-04-08</p>
-                    <p>親子輕旅行 台北白石湖採草莓、 踏青一日遊</p>
-                    <div>
-                      <img src="@/assets/blog-img/blog-tag.png" />
-                      <span>知識類</span>
-                    </div>
-                    <p>區內種植草莓聞名，每年12月至5月的草莓產季來臨，的...</p>
-                  </div>
-                  <div>
-                    <div>
-                      <img src="@/assets/blog-img/blog-someoneshead.png" />
-                    </div>
-                    <div>
-                      <span>蓬蓬草莓姨</span>
-                      <div>
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                      </div>
-                    </div>
-                    <div>
-                      <span>+追蹤</span>
-                    </div>
-                  </div>
-                </router-link>
-                <router-link
-                  to="/main/blog/landing"
-                  class="blog-post2-small-card nine"
-                >
-                  <div>
-                    <img src="@/assets/blog-img/post/grape.png" />
-                    <div>
-                      <div>
-                        <img src="@/assets/blog-img/blog-thumb.png" />
-                      </div>
-                      <div>
-                        <span>100</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <p>2020-04-08</p>
-                    <p>親子輕旅行 台北白石湖採草莓、 踏青一日遊</p>
-                    <div>
-                      <img src="@/assets/blog-img/blog-tag.png" />
-                      <span>知識類</span>
-                    </div>
-                    <p>區內種植草莓聞名，每年12月至5月的草莓產季來臨，的...</p>
-                  </div>
-                  <div>
-                    <div>
-                      <img src="@/assets/blog-img/blog-someoneshead.png" />
-                    </div>
-                    <div>
-                      <span>蓬蓬草莓姨</span>
-                      <div>
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                      </div>
-                    </div>
-                    <div>
-                      <span>+追蹤</span>
-                    </div>
-                  </div>
-                </router-link>-->
-                <router-link
-                  to="/main/blog/landing"
-                  class="blog-post2-small-card"
-                  v-for="(i, index) in aa"
+                  v-for="(i, index) in blogArrFilter"
                   :key="index"
+                  class="blog-post2-small-card-outer"
                 >
-                  <div>
-                    <img src="@/assets/blog-img/post/grape.png" />
+                  <div class="blog-post2-small-card" @click="changePage(i)">
                     <div>
+                      <img src="@/assets/blog-img/post/grape.png" />
                       <div>
-                        <img src="@/assets/blog-img/blog-thumb.png" />
-                      </div>
-                      <div>
-                        <span>100</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <p>2020-04-08</p>
-                    <p>親子輕旅行 台北白石湖採草莓、 踏青一日遊</p>
-                    <div>
-                      <img src="@/assets/blog-img/blog-tag.png" />
-                      <span>知識類</span>
-                    </div>
-                    <p>區內種植草莓聞名，每年12月至5月的草莓產季來臨，的...</p>
-                  </div>
-                  <div>
-                    <div>
-                      <img src="@/assets/blog-img/blog-someoneshead.png" />
-                    </div>
-                    <div>
-                      <span>蓬蓬草莓姨</span>
-                      <div>
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
-                        <img src="@/assets/blog-img/blog-star.png" />
+                        <div>
+                          <img src="@/assets/blog-img/blog-thumb.png" />
+                        </div>
+                        <div>
+                          <span>100</span>
+                        </div>
                       </div>
                     </div>
                     <div>
-                      <span>+追蹤</span>
+                      <p>{{ i.date }}</p>
+                      <p>{{ i.title }}</p>
+                      <div>
+                        <img src="@/assets/blog-img/blog-tag.png" />
+                        <span>知識類</span>
+                      </div>
+                      <p>{{ i.content }}</p>
                     </div>
+                    <div>
+                      <div>
+                        <img src="@/assets/blog-img/blog-someoneshead.png" />
+                      </div>
+                      <div>
+                        <span>蓬蓬草莓姨</span>
+                        <div>
+                          <img src="@/assets/blog-img/blog-star.png" />
+                          <img src="@/assets/blog-img/blog-star.png" />
+                          <img src="@/assets/blog-img/blog-star.png" />
+                          <img src="@/assets/blog-img/blog-star.png" />
+                          <img src="@/assets/blog-img/blog-star.png" />
+                        </div>
+                      </div>
+                      <div>
+                        <span>+追蹤</span>
+                      </div>
+                    </div>
+                    <span class="post2BlogNo">{{ i.no }}</span>
                   </div>
                 </router-link>
               </div>
@@ -615,19 +327,20 @@
             <!--頁簽-->
             <!--頁簽-->
             <ul class="page">
-              <li>
+              <li @click="PreviousPage">
                 <img src="@/assets/blog-img/post/arrow-left.png" />
               </li>
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
-              <li>5</li>
-              <li>6</li>
-              <li>7</li>
-              <li>8</li>
-              <li>9</li>
-              <li>
+
+              <li
+                class="pageBorder"
+                v-for="(i, index) in pageArr"
+                :key="index"
+                v-on="{click: pageSelect}"
+              >
+                {{ i }}
+              </li>
+
+              <li @click="nextPage">
                 <img src="@/assets/blog-img/post/arrow-right.png" />
               </li>
             </ul>
@@ -1510,128 +1223,142 @@
   @media (max-width: 1300px) {
     padding-right: 0%;
   }
-  > .blog-post2-long-card {
-    display: flex;
-    border: #007552 solid 2px;
-    @media (max-width: 700px) {
-      padding-bottom: 2%;
-      flex-direction: column;
-    }
-    > div:nth-child(1) {
-      border-right: solid #007552 1.5px;
-      position: relative;
-      //妹妹假蠵龜
-      width: 80%;
-      padding-top: 310px;
-      background-image: url('../assets/blog-img/post/kidEatsWatermelon.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-      @media (max-width: 1500px) {
-        width: 100%;
-      }
-      @media (max-width: 1400px) {
-        width: 150%;
-      }
-      @media (max-width: 768px) {
-        width: 200%;
-      }
+  .blog-post2-long-card-outer {
+    text-decoration: none;
+    > .blog-post2-long-card {
+      text-decoration: none;
+      display: flex;
+      border: #007552 solid 2px;
       @media (max-width: 700px) {
-        width: 100%;
+        padding-bottom: 2%;
+        flex-direction: column;
       }
-    }
-    > div:nth-child(2) {
-      padding: 3% 3% 0px 3%;
-      //右邊
       > div:nth-child(1) {
-        //右上
-        > p:nth-child(1) {
-          color: #808080;
-          font-size: 14px;
+        border-right: solid #007552 1.5px;
+        position: relative;
+        //妹妹假蠵龜
+        width: 500%;
+        padding-top: 310px;
+        background-image: url('../assets/blog-img/post/kidEatsWatermelon.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0% 50%;
+        @media (max-width: 1800px) {
+          width: 550%;
         }
-        > p:nth-child(2) {
-          margin-top: 5px;
-          font-size: 16px;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 1;
-          overflow: hidden;
+        @media (max-width: 1700px) {
+          width: 600%;
         }
-        > p:nth-child(3) {
-          margin-top: 25px;
-          > img:nth-child(1) {
-          }
-          > span:nth-child(2) {
-            color: #62bc5a;
-            padding-right: 100px;
-            font-size: 14px;
-            position: relative;
-            top: 5px;
-            margin-left: 10px;
-          }
-          > img:nth-child(3) {
-          }
-          > span:nth-child(4) {
-            font-size: 14px;
-            color: #a0a0a0;
-            margin-left: 5px;
-          }
-          > img:nth-child(5) {
-            margin-left: 20px;
-          }
-          > span:nth-child(6) {
-            margin-left: 5px;
-            font-size: 14px;
-            color: #a0a0a0;
-          }
+        @media (max-width: 1500px) {
+          width: 750%;
         }
-        > p:nth-child(4) {
-          font-size: 16px;
-          margin-top: 20px;
-          padding-right: 50px;
+        @media (max-width: 1400px) {
+          width: 1000%;
+        }
+        @media (max-width: 768px) {
+          width: 1200%;
+        }
+        @media (max-width: 700px) {
           width: 100%;
-          display: -webkit-box; /* -webkit-box 尚在實驗性的屬性值 */
-          -webkit-box-orient: vertical; /* 用來設定一個元素是水平還是垂直方向排列其內容 */
-          -webkit-line-clamp: 3; /* 限制指定的行數 */
-          overflow: hidden;
-          @media (max-width: 500px) {
-            padding-right: 0px;
-          }
         }
       }
       > div:nth-child(2) {
-        //右下澎澎姨
-        display: flex;
-        margin-top: 70px;
-        position: relative;
-        &::before {
-          content: '';
-          border-top: solid #007552 1.5px;
-          width: 100%;
-          top: -15px;
-          position: absolute;
-        }
+        padding: 3% 3% 0px 3%;
+        //右邊
         > div:nth-child(1) {
+          //右上
+          > p:nth-child(1) {
+            color: #808080;
+            font-size: 14px;
+          }
+          > p:nth-child(2) {
+            margin-top: 5px;
+            font-size: 16px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+            color: #000;
+            // background-color:#000;
+          }
+          > p:nth-child(3) {
+            margin-top: 25px;
+            > img:nth-child(1) {
+            }
+            > span:nth-child(2) {
+              color: #62bc5a;
+              padding-right: 100px;
+              font-size: 14px;
+              position: relative;
+              top: 5px;
+              margin-left: 10px;
+            }
+            > img:nth-child(3) {
+            }
+            > span:nth-child(4) {
+              font-size: 14px;
+              color: #a0a0a0;
+              margin-left: 5px;
+            }
+            > img:nth-child(5) {
+              margin-left: 20px;
+            }
+            > span:nth-child(6) {
+              margin-left: 5px;
+              font-size: 14px;
+              color: #a0a0a0;
+            }
+          }
+          > p:nth-child(4) {
+            color: #000;
+            font-size: 16px;
+            margin-top: 20px;
+            padding-right: 50px;
+            width: 100%;
+            display: -webkit-box; /* -webkit-box 尚在實驗性的屬性值 */
+            -webkit-box-orient: vertical; /* 用來設定一個元素是水平還是垂直方向排列其內容 */
+            -webkit-line-clamp: 3; /* 限制指定的行數 */
+            overflow: hidden;
+            @media (max-width: 500px) {
+              padding-right: 0px;
+            }
+          }
         }
         > div:nth-child(2) {
+          //右下澎澎姨
+          display: flex;
+          margin-top: 70px;
+          position: relative;
+          &::before {
+            content: '';
+            border-top: solid #007552 1.5px;
+            width: 100%;
+            top: -15px;
+            position: absolute;
+          }
           > div:nth-child(1) {
-            font-size: 16px;
-            padding-top: 10px;
           }
           > div:nth-child(2) {
-            padding-top: 5px;
-            padding-left: 10px;
+            > div:nth-child(1) {
+              font-size: 16px;
+              color: #000;
+              padding-top: 10px;
+            }
+            > div:nth-child(2) {
+              padding-top: 5px;
+              padding-left: 10px;
+            }
           }
-        }
-        > div:nth-child(3) {
-          padding-top: 10px;
-          padding-left: 40px;
-          > span:nth-child(1) {
-            font-size: 14px;
-            color: #fbf8ef;
-            background-color: #007552;
-            padding: 3px 15px;
-            border-radius: 15px;
+          > div:nth-child(3) {
+            padding-top: 10px;
+            padding-left: 40px;
+            > span:nth-child(1) {
+              font-size: 14px;
+              color: #fbf8ef;
+              background-color: #007552;
+              padding: 3px 15px;
+              border-radius: 15px;
+            }
           }
         }
       }
@@ -1641,148 +1368,160 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
-    .blog-post2-small-card {
-      &.ml {
-        margin-left: 10px;
-      }
-      &.nine {
-        @media (max-width: 9999px) {
-          display: none;
+    .blog-post2-small-card-outer {
+      text-decoration: none;
+      .blog-post2-small-card {
+        &.ml {
+          margin-left: 10px;
         }
+        &.nine {
+          @media (max-width: 9999px) {
+            display: none;
+          }
+          @media (max-width: 1896px) {
+            display: inline-block;
+          }
+          @media (max-width: 1400px) {
+            display: none;
+          }
+          @media (max-width: 1300px) {
+            display: inline-block;
+          }
+          @media (max-width: 900px) {
+            display: none;
+          }
+        }
+        text-decoration: none;
+        color: #000;
+        margin-top: 15px;
+        width: 270px;
+        border: solid #007552 2px;
         @media (max-width: 1879px) {
-          display: inline-block;
+          width: 32%;
         }
         @media (max-width: 1400px) {
-          display: none;
+          width: 48%;
         }
         @media (max-width: 1300px) {
-          display: inline-block;
+          width: 32%;
         }
         @media (max-width: 900px) {
-          display: none;
+          width: 48%;
         }
-      }
-      text-decoration: none;
-      color: #000;
-      margin-top: 15px;
-      width: 270px;
-      border: solid #007552 2px;
-      @media (max-width: 1879px) {
-        width: 32%;
-      }
-      @media (max-width: 1400px) {
-        width: 48%;
-      }
-      @media (max-width: 1300px) {
-        width: 32%;
-      }
-      @media (max-width: 900px) {
-        width: 48%;
-      }
-      @media (max-width: 576px) {
-        width: 100%;
-      }
-      > div:nth-child(1) {
-        //葡萄圖片
-        border-bottom: solid #007552 2px;
-        position: relative;
-        > img:nth-child(1) {
+        @media (max-width: 576px) {
           width: 100%;
         }
-        > div:nth-child(2) {
-          position: absolute;
-          right: 10px;
-          bottom: 10px;
-          display: flex;
-          > div:nth-child(1) {
-            margin-right: 0px;
-            margin-top: 5px;
-            > img:nth-child(1) {
-              width: 80%;
-            }
-          }
-          > div:nth-child(2) {
-            background-color: #f7c845;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            position: relative;
-            > span:nth-child(1) {
-              color: #62bc5a;
-              font-size: 16px;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translateX(-50%) translateY(-50%);
-            }
-          }
-        }
-      }
-      > div:nth-child(2) {
-        //日期、標題、標籤、內文
-        border-bottom: #a0a0a0 solid 2px;
-        padding-left: 10px;
-        padding-right: 20px;
-        > p:nth-child(1) {
-          //日期
-          margin-top: 5px;
-          color: #808080;
-        }
-        > p:nth-child(2) {
-          //標題
-          margin-top: 5px;
-          font-size: 16px;
-          // line-height: 1.5;
-        }
-        > div:nth-child(3) {
-          //標籤
-          margin-top: 10px;
-          color: #a0a0a0;
-          font-size: 14px;
-        }
-        > p:nth-child(4) {
-          margin-top: 10px;
-          padding-bottom: 10px;
-          line-height: 1.2;
-          font-size: 16px;
-          //內文
-        }
-      }
-      > div:nth-child(3) {
-        // background-color: #000;
-        display: flex;
-        margin-top: 10px;
-        padding-left: 10px;
-        padding-bottom: 10px;
-        //草莓姨
         > div:nth-child(1) {
-          //草莓姨照片
-        }
-        > div:nth-child(2) {
-          //暱稱、星星
-          padding-top: 7px;
-          margin-left: 10px;
-          > span:nth-child(1) {
-            //暱稱
-            font-size: 16px;
+          //葡萄圖片
+          border-bottom: solid #007552 2px;
+          position: relative;
+          > img:nth-child(1) {
+            width: 100%;
           }
           > div:nth-child(2) {
-            //星星
-            margin-top: 3px;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            display: flex;
+            > div:nth-child(1) {
+              margin-right: 0px;
+              margin-top: 5px;
+              > img:nth-child(1) {
+                width: 80%;
+              }
+            }
+            > div:nth-child(2) {
+              background-color: #f7c845;
+              border-radius: 50%;
+              width: 40px;
+              height: 40px;
+              position: relative;
+              > span:nth-child(1) {
+                color: #62bc5a;
+                font-size: 16px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+              }
+            }
+          }
+        }
+        > div:nth-child(2) {
+          //日期、標題、標籤、內文
+          border-bottom: #a0a0a0 solid 2px;
+          padding-left: 10px;
+          padding-right: 20px;
+          > p:nth-child(1) {
+            //日期
+            margin-top: 5px;
+            color: #808080;
+          }
+          > p:nth-child(2) {
+            //標題
+            margin-top: 5px;
+            font-size: 16px;
+            // line-height: 1.5;
+          }
+          > div:nth-child(3) {
+            //標籤
+            margin-top: 10px;
+            color: #a0a0a0;
+            font-size: 14px;
+          }
+          > p:nth-child(4) {
+            //內文
+            margin-top: 10px;
+            padding-bottom: 10px;
+            line-height: 1.3;
+            font-size: 16px;
+            // background-color:#000;
+            overflow: hidden;
+            height: 92px;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
           }
         }
         > div:nth-child(3) {
-          //追蹤
-          padding-top: 10px;
-          padding-left: 30px;
-          > span:nth-child(1) {
-            color: #fbf8ef;
-            background-color: #007552;
-            font-size: 14px;
-            padding: 2px 10px;
-            border-radius: 20px;
+          // background-color: #000;
+          display: flex;
+          margin-top: 10px;
+          padding-left: 10px;
+          padding-bottom: 10px;
+          //草莓姨
+          > div:nth-child(1) {
+            //草莓姨照片
           }
+          > div:nth-child(2) {
+            //暱稱、星星
+            padding-top: 7px;
+            margin-left: 10px;
+            > span:nth-child(1) {
+              //暱稱
+              font-size: 16px;
+            }
+            > div:nth-child(2) {
+              //星星
+              margin-top: 3px;
+            }
+          }
+          > div:nth-child(3) {
+            //追蹤
+            padding-top: 10px;
+            padding-left: 30px;
+            > span:nth-child(1) {
+              color: #fbf8ef;
+              background-color: #007552;
+              font-size: 14px;
+              padding: 2px 10px;
+              border-radius: 20px;
+            }
+          }
+        }
+        .post2BlogNo {
+          display: none;
         }
       }
     }
@@ -1811,15 +1550,17 @@
     }
   }
   > li:nth-child(2) {
+    cursor: pointer;
     border: solid #007552 2px;
   }
-  > li:nth-child(1n + 2) {
+  > .pageBorder {
     // border: solid #007552 2px;
     border-top: solid #007552 2px;
     border-right: solid #007552 2px;
     border-bottom: solid #007552 2px;
+    cursor: pointer;
   }
-  > li:nth-child(11) {
+  > li:nth-child(12) {
     border: none;
     > img:nth-child(1) {
       width: 95%;
@@ -1828,7 +1569,11 @@
       }
     }
   }
-  > li:nth-child(2) {
+  // li:nth-child(2) {
+  //   background-color: #ffd3c1;
+  //   color: #007552;
+  // }
+  > .currentPagecolor {
     background-color: #ffd3c1;
     color: #007552;
   }
@@ -1839,29 +1584,47 @@
 </style>
 
 <script>
+import $ from 'jquery';
 export default {
   data() {
     return {
       member: {
         no: [1, 2, 3],
       },
-      aa: null,
+      blogArr: null,
+      blogArrFilter: [],
+      blogArrFilterTop: [],
+      pageArr: [],
+      currentPage: [],
     };
+  },
+  beforeMount() {},
+  mounted() {npm 
+    // console.log(document.getElementsByClassName("pageBorder")[0]);
+    // document
+    //   .getElementsByClassName("pageBorder")[0]
+    //   .classList.add("currentPagecolor");
+  },
+  updated() {
+    let bb = document.getElementsByClassName('blog-post2-small-card')[8];
+    bb.classList.add('nine');
+    for (let i = 0; i <= 8; i++) {
+      document
+        .getElementsByClassName('pageBorder')
+        [i].setAttribute('class', 'pageBorder');
+      if (
+        document.getElementsByClassName('pageBorder')[i].textContent ==
+        this.currentPage[0]
+      ) {
+        document
+          .getElementsByClassName('pageBorder')
+          [i].classList.add('currentPagecolor');
+      }
+    }
+    // console.log(document.getElementsByClassName("pageBorder"))
   },
   created() {
     const api = '/api/api_blog.php';
-    // let xhr = new XMLHttpRequest();
-    // xhr.open('Post', 'http://localhost/api/api_blog.php', true);
-    // xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
-
-    // let dataInfo = `${JSON.stringify(member)}`;
-    // // console.log(dataInfo);
-    // xhr.send(dataInfo);
-    // xhr.onload = function() {
-    //   if (xhr.status == 200) {
-    //     console.log(xhr.responseText);
-    //   }
-    // };
 
     this.$http
       .post(api, JSON.stringify(this.member))
@@ -1872,20 +1635,127 @@ export default {
           // sessionStorage.setItem('abc', JSON.stringify(res.data));
           // sessionStorage.clear();
           // let abc = sessionStorage.getItem('abc');
-          this.aa = res.data;
-          // console.log(this.aa[0].content);
-          // console.log(this.aa[1].content);
+          this.blogArr = res.data;
 
-          console.log(this.aa);
+          this.blogArrFilterTop.push(this.blogArr[0]);
+          for (let i = 1; i < 10; i++) {
+            this.blogArrFilter.push(this.blogArr[i]);
+          }
+          this.currentPage.push(1);
+          for (let i = 1; i < 10; i++) {
+            this.pageArr.push(i);
+          }
         } else {
-          console.log(res.error);
+          // console.log(res.error);
         }
       })
       .catch((err) => console.log(err));
-
-    // console.log(aa);
   },
+  beforeDestroy() {},
   computed: {},
-  methods: {},
+
+  methods: {
+    pageSelect(e) {
+      let pageNum = parseInt(e.target.textContent);
+      // console.log(e.target.textContent)
+      this.blogArrFilter = [];
+      this.blogArrFilterTop = [];
+      this.currentPage = [];
+      // console.log(parseInt(this.blogArr.length / 9));
+      if (pageNum > 5 && pageNum < parseInt(this.blogArr.length / 9) - 5) {
+        this.pageArr = [];
+        for (let i = pageNum - 4; i < pageNum + 5; i++) {
+          this.pageArr.push(i);
+        }
+      } else if (pageNum >= parseInt(this.blogArr.length / 9) - 5) {
+        this.pageArr = [];
+        for (
+          let i = parseInt(this.blogArr.length / 9) - 8;
+          i <= parseInt(this.blogArr.length / 9);
+          i++
+        ) {
+          this.pageArr.push(i);
+        }
+      } else {
+        this.pageArr = [];
+        for (let i = 1; i < 10; i++) {
+          this.pageArr.push(i);
+        }
+      }
+
+      this.currentPage.push(pageNum);
+      let currentPage1 = this.currentPage[0];
+      this.blogArrFilterTop.push(this.blogArr[(currentPage1 - 1) * 9]);
+
+      for (let i = (currentPage1 - 1) * 9 + 1; i < currentPage1 * 9 + 1; i++) {
+        this.blogArrFilter.push(this.blogArr[i]);
+      }
+
+      for (let i = 1; i < 9; i++) {
+        e.target.parentNode.children[i].setAttribute('class', 'pageBorder');
+      }
+      // console.log(document.getElementsByClassName("pageBorder"));
+      e.target.parentNode.children[1].setAttribute('class', 'pageBorder');
+      //   document.getElementsByClassName("pageBorder")[0].setAttribute("class","");
+    },
+    PreviousPage() {
+      let currentPage1 = this.currentPage[0];
+      // this.currentPage = [];
+      this.blogArrFilterTop = [];
+      this.blogArrFilter = [];
+      if (this.currentPage > 1) {
+        this.currentPage = [];
+        this.currentPage.push(currentPage1 - 1);
+      }
+      // this.currentPage.push(currentPage1 - 1);
+      let updatePage = this.currentPage[0];
+
+      this.blogArrFilterTop.push(this.blogArr[(updatePage - 1) * 9]);
+
+      for (let i = (updatePage - 1) * 9 + 1; i < updatePage * 9 + 1; i++) {
+        this.blogArrFilter.push(this.blogArr[i]);
+      }
+      if (this.pageArr[0] > 1) {
+        this.pageArr.forEach((item, index, array) => {
+          this.pageArr[index] = this.pageArr[index] - 1;
+        });
+      }
+    },
+    nextPage() {
+      let currentPage1 = this.currentPage[0];
+      // this.currentPage = [];
+      this.blogArrFilterTop = [];
+      this.blogArrFilter = [];
+      if (this.currentPage < parseInt(this.blogArr.length / 9)) {
+        this.currentPage = [];
+        this.currentPage.push(currentPage1 + 1);
+      }
+      let updatePage = this.currentPage[0];
+
+      this.blogArrFilterTop.push(this.blogArr[(updatePage - 1) * 9]);
+
+      for (let i = (updatePage - 1) * 9 + 1; i < updatePage * 9 + 1; i++) {
+        this.blogArrFilter.push(this.blogArr[i]);
+      }
+      if (this.pageArr[8] < parseInt(this.blogArr.length / 9)) {
+        this.pageArr.forEach((item, index, array) => {
+          this.pageArr[index] = this.pageArr[index] + 1;
+        });
+      }
+    },
+    changePage(e) {
+      // (blog)a. 往父層傳遞一個 event(blogInf) 的值(this.blogArr)
+      // console.log(i);
+      // this.$emit('blogInf', {
+      //   aa: this.blogArr,
+      //   bb: e.target.parentNode.parentNode.children[3].textContent,
+      // });
+
+      this.$emit('blogInf', e);
+    },
+    getThisCard(e) {
+      console.log(e.target.parentNode.parentNode.children[3].textContent);
+    },
+  },
 };
 </script>

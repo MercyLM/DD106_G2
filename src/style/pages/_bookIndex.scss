@@ -23,9 +23,10 @@
         vertical-align: top;
         text-align: center;
         transition: .5s;
+        width: 20%;
+        height: 100%;
 
         @mixin imgOpacity {
-
             content: "";
             width: 100%;
             height: 30%;
@@ -62,9 +63,7 @@
 
             &:hover {
                 background-color: #ffbf108a;
-
                 &::after {
-
                     opacity: 1;
                 }
             }
@@ -138,9 +137,6 @@
             }
         }
 
-        width: 20%;
-        height: 100%;
-
         h5 {
             //border: 1px solid red;
             font-size: 1.6rem;
@@ -182,9 +178,13 @@
                 }
             }
         }
+
     }
 
     @include rwd(small) {
+        &::before{
+            display: none;
+        }
         .bk_content1 {
             display: block;
             width: 100%;
@@ -216,6 +216,7 @@
 
                 li {
                     display: inline-block;
+                    padding: 10px;
 
                     &:hover {
                         width: auto;
@@ -227,6 +228,7 @@
     }
 
     @include rwd(mobile) {
+        overflow: hidden;
         .bk_content1 {
 
             h5 {
@@ -245,20 +247,5 @@
             }
         }
     }
-}
 
-@include rwd (small) {
-    .fruit_index {
-        &::before {
-            display: none;
-        }
-    }
-}
-
-@include rwd (mobile) {
-    .fruit_index {
-        overflow: hidden;
-        // display: none;
-        width: 100%;
-    }
 }
