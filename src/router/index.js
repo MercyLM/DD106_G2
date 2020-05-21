@@ -98,12 +98,20 @@ const routes = [
       {
         path: "shopping",
         name: "Shopping",
+        meta: {
+          requiresAuth: true,
+        },
         component: () => import("@/views/MemberShopping.vue"),
       },
       {
         path: "checkInfo",
         name: "CheckInfo",
         component: () => import("@/views/MemberCheckInfo.vue"),
+      },
+      {
+        path: "payInfo",
+        name: "PayInfo",
+        component: () => import("@/views/MemberPayInfo.vue"),
       },
       {
         path: "farmRegistered",
@@ -125,12 +133,12 @@ const routes = [
       },
       {
         path: "update",
-        name: "Update",
+        name: "FarmUpdate",
         component: () => import("@/views/FarmMemberupdate.vue"),
       },
       {
         path: "order",
-        name: "Order",
+        name: "FarmOrder",
         component: () => import("@/views/FarmMemberOrder.vue"),
       },
       {
@@ -140,7 +148,7 @@ const routes = [
       },
       {
         path: "blog",
-        name: "Blog",
+        name: "FarmBlog",
         component: () => import("@/views/FarmMemberBlog.vue"),
       },
       {
@@ -215,7 +223,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  // mode: "history",
   base: process.env.BASE_URL,
   routes,
 });
