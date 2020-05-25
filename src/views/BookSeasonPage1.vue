@@ -42,7 +42,7 @@ export default {
     };
   },
   created() {
-    const api = "/api/api_bookContent.php";
+    const api = this.path + "api_bookContent.php";
 
     this.$http
       .post(
@@ -62,25 +62,27 @@ export default {
           const type = this.contentType;
 
           if (type == 0 || type == 2 || type == 4) {
-            this.imgLeft = imgArr[0];
-            this.imgRight = imgArr[1];
-          } else if (type == 1 || type == 3) {
+            this.imgLeft = this.img + imgArr[0];
+            this.imgRight = this.img + imgArr[1];
+          }
+
+          if (type == 1 || type == 3) {
             for (let i = 0; i < 4; i++) {
-              this.imgLeft[i] = imgArr[i];
+              this.imgLeft[i] = this.img + imgArr[i];
             }
-            this.imgRight = imgArr[4];
+            this.imgRight = this.img + imgArr[4];
           }
         }
       });
 
     this.changeContent();
   },
-  computed: {
-    content: function() {
-      this.changeContent();
-      return this.index[this.contentType].item[Math.round(this.page / 2)];
-    }
-  },
+  // computed: {
+  //   content: function() {
+  //     this.changeContent();
+  //     return this.index[this.contentType].item[Math.round(this.page / 2)];
+  //   }
+  // },
   methods: {
     changeContent: function() {
       if (this.contentType == 0) {
