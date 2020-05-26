@@ -687,6 +687,7 @@
 
       @media (max-width: 576px) {
         // padding-top: 20%;
+        padding-bottom: 10px;
         text-align: end;
         margin-right: 5px;
       }
@@ -866,9 +867,9 @@
         > div:nth-child(2) {
           //acc、date
           margin-left: 10px;
-          > p:nth-child(1) {
-            //acc
-          }
+          // > p:nth-child(1) {
+          //   //acc
+          // }
           > p:nth-child(2) {
             //date
             color: #a0a0a0;
@@ -944,11 +945,14 @@
           }
         }
         .blogPost2ButtonMore {
-          width: 10%;
+          width: 14%;
           margin-top: 3%;
           margin-left: 25%;
           @media (max-width: 1600px) {
             margin-left: 45%;
+          }
+          >.btn-more{
+            height: 30px;
           }
         }
       }
@@ -1262,8 +1266,8 @@
       @media (max-width: 1650px) {
         width: 320px;
       }
-      > img:nth-child(1) {
-      }
+      // > img:nth-child(1) {
+      // }
       > img:nth-child(2),
       img:nth-child(3),
       img:nth-child(4),
@@ -1428,8 +1432,8 @@
           }
           > p:nth-child(3) {
             margin-top: 25px;
-            > img:nth-child(1) {
-            }
+            // > img:nth-child(1) {
+            // }
             > span:nth-child(2) {
               color: #62bc5a;
               padding-right: 100px;
@@ -1438,8 +1442,8 @@
               top: 5px;
               margin-left: 10px;
             }
-            > img:nth-child(3) {
-            }
+            // > img:nth-child(3) {
+            // }
             > span:nth-child(4) {
               font-size: 14px;
               color: #a0a0a0;
@@ -1567,8 +1571,8 @@
         &.ml {
           margin-left: 10px;
         }
-        &.nine {
-        }
+        // &.nine {
+        // }
 
         > div:nth-child(1) {
           //葡萄圖片
@@ -1799,7 +1803,7 @@ export default {
       }
     }
 
-    let api = '/api/api_get_msg_blogtop.php';
+    let api = this.path + "api_get_msg_blogtop.php";
 
     this.$http
       .post(api, JSON.stringify(this.blogArrFilterTop[0].no))
@@ -1807,7 +1811,7 @@ export default {
         if (res.data != '') {
           this.topMsg = res.data;
 
-          console.log(res.data);
+          // console.log(res.data);
         } else {
         }
       });
@@ -1838,7 +1842,7 @@ export default {
           // }
           this.blogArr.forEach((arr, i) => {
             arr.img.forEach((item, index) => {
-              this.blogArr[i].img[index] = `/api/${item}`;
+              this.blogArr[i].img[index] = this.img + item;
             });
           });
 
@@ -1876,8 +1880,7 @@ export default {
         } else {
           // console.log(res.error);
         }
-      })
-      .catch((err) => console.log(err));
+      });
   },
   beforeDestroy() {},
   computed: {},
@@ -2006,8 +2009,8 @@ export default {
       //   aa: this.blogArr,
       //   bb: e.target.parentNode.parentNode.children[3].textContent,
       // });
-      console.log(e);
-      console.log('123');
+      // console.log(e);
+      // console.log('123');
       this.$emit('blogInf', e);
       // console.log(e);
 
@@ -2015,14 +2018,14 @@ export default {
 
       this.$http.post(api, JSON.stringify(e)).then((res) => {
         if (res.data != '') {
-          console.log(res.data);
+          // console.log(res.data);
         } else {
-          console.log(res.error);
+          // console.log(res.error);
         }
       });
     },
     getThisCard(e) {
-      console.log(e.target.parentNode.parentNode.children[3].textContent);
+      // console.log(e.target.parentNode.parentNode.children[3].textContent);
     },
   },
 };
