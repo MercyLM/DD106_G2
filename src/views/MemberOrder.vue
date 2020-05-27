@@ -24,7 +24,7 @@
                   </tr>
                   <tr>
                     <td>{{ this.order[this.i].date }}</td>
-                    <td>{{ this.order[this.i].total }}</td>
+                    <td>$ {{ this.order[this.i].total }}</td>
                     <td v-if="this.order[this.i].payment_status == 1">
                       已付款
                     </td>
@@ -40,12 +40,7 @@
           </div>
 
           <div class="list_slide">
-            <img
-              id="ploygon"
-              class="plogon"
-              src="@/assets/Polygon 2.svg"
-              alt=""
-            />
+            <img id="ploygon" class="plogon" src="@/assets/Polygon 2.svg" alt />
             <span id="ploygon">訂單明細</span>
           </div>
           <div class="slide display">
@@ -63,9 +58,9 @@
                     <tr v-for="i in item" :key="i.no">
                       <td>{{ i.no }}</td>
                       <td>{{ i.name }}</td>
-                      <td>{{ i.price }}</td>
+                      <td>$ {{ i.price }}</td>
                       <td>{{ i.amount }}</td>
-                      <td>{{ i.amount * i.price }}</td>
+                      <td>$ {{ i.amount * i.price }}</td>
                     </tr>
                   </thead>
                 </table>
@@ -79,8 +74,8 @@
           </div>
           <div class="total">
             <p>
-              <span>商品金額:$</span
-              ><span>{{ this.order[this.i].total - 65 }}</span>
+              <span>商品金額：$</span>
+              <span>{{ this.order[this.i].total - 65 }}</span>
             </p>
             <p>運費 $65</p>
             <!-- <p><span>總金額:$</span><span>{{parseInt(this.order[this.i].total) - 65}}</span></p>-->
@@ -140,7 +135,7 @@
               <div class="Evaluation_submit">
                 <!-- <a href="#">
                                     <p>不想給了</p>
-                                </a> -->
+                </a>-->
 
                 <button class="starSend" @click="starSend">送出</button>
               </div>
@@ -203,17 +198,18 @@ export default {
           $(".order_zero").show();
         } else {
           this.order = res.data;
+          const api3 = this.path + "api_orderItem.php";
+
+          this.$http
+            .post(api3, JSON.stringify(this.order[this.i].no))
+            .then((res) => {
+              this.item = res.data;
+            });
         }
       });
     });
   },
   updated() {
-    const api = this.path + "api_orderItem.php";
-
-    this.$http.post(api, JSON.stringify(this.order[this.i].no)).then((res) => {
-      this.item = res.data;
-    });
-
     if (this.order[this.i].payment_status == 0) {
       $(".starSend").attr("disabled", true);
     } else if (this.order[this.i].payment_status == 1) {
