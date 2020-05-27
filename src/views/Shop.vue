@@ -43,12 +43,12 @@
                 嚴選台灣出產高甜度愛文芒果，為夏季芒果推薦 “TOP 1”
                 因果皮紅潤且果肉金黃，又有“太陽果”之稱。
                 <br />
-                <router-link class="product-details" to="/main/shopitem">商品詳情...</router-link>
+                <!-- <router-link class="product-details" to="/main/shopitem">商品詳情...</router-link> -->
               </p>
-              <div class="item_buy-box">
+              <!-- <div class="item_buy-box">
                 <a href="#" class="item_btn" @mouseenter="btnFun">加入購物籃</a>
                 <a href="#" class="item_btn buyNow">直接購買</a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -56,6 +56,7 @@
     </section>
 
     <div class="search-wrapper">
+      <nav id="nav_bg"></nav>
       <img src="../assets/search_logo_img.svg" width="170px" height="100px" class="search_logo" />
       <div class="search-section">
         <div class="searchbar">
@@ -77,7 +78,7 @@
               />
             </button>
           </div>
-          <div class="hot-words">
+          <!-- <div class="hot-words">
             <div class="hot-words_list">
               <a class="hot-words_item" href>週末親子旅遊</a>
               <a class="hot-words_item" href>桃園山區採果</a>
@@ -85,7 +86,7 @@
               <a class="hot-words_item" href>愛文芒果</a>
               <a class="hot-words_item" href>大湖草莓</a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -165,7 +166,7 @@
               <router-link to="/main/shopitem">
                 <div class="card_img_box" @click="changePage(i)">
                   <img
-                    :src="'./api/' + shopcommodityfilter[index].img.split(',')[0]"
+                    :src="'/api/' + shopcommodityfilter[index].img.split(',')[0]"
                     width="100%"
                     height="100%"
                   />
@@ -174,7 +175,7 @@
               </router-link>
               <div class="card_content">
                 <div class="commodity_title">
-                  <div class="commodity_title_text">{{ i.date }}</div>
+                  <div class="commodity_title_text">{{ i.iname }}</div>
                 </div>
 
                 <div
@@ -201,7 +202,12 @@
                     @click="addCart(i.no)"
                     @mouseenter="btnFun"
                   >加入購物籃</a>
-                  <a href="javascript:" class="card_btn" @mouseenter="btnFun">直接購買</a>
+                  <a
+                    href="javascript:"
+                    class="card_btn"
+                    @mouseenter="btnFun"
+                    @click="addCart(i.no, 't')"
+                  >直接購買</a>
                 </div>
               </div>
             </div>
@@ -225,10 +231,10 @@
             @mouseleave="HotCommodityItemsLeave"
           >
             <router-link to="/main/shopitem">
-              <div class="hot_commodity_text">{{ h.name }}</div>
+              <div class="hot_commodity_text">{{ h.iname }}</div>
             </router-link>
             <span>{{ index + 1 }}</span>
-            <img class="hot_commodity_bg" :src="`/api/` + shopcommodity.pro[0].img.split(',')[0]" />
+            <img class="hot_commodity_bg" :src="'/api/' + shopcommodity.pro[0].img.split(',')[0]" />
           </div>
         </div>
         <div class="hot_commodity_filter-status">
@@ -328,6 +334,24 @@
     </div>
   </main>
 </template>
+<style lang="scss" scoped>
+.navbg {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding: 0px 1%;
+  top: 0px;
+  transition: all 0.5s;
+  height: 60px;
+  width: 100%;
+  z-index: 998;
+  background-color: rgba(251, 248, 239, 0.89);
+  transition: ease 0.3s;
+}
+</style>
+
 <script>
 import $ from "jquery";
 import { gsap, TweenMax, Power1, Power3, TimelineMax, Linear } from "gsap";
@@ -498,8 +522,8 @@ export default {
       const firstItem = this.currentPage * SHOP_PAGE_ITEMS;
       const lastItem = Math.min(firstItem + 8, this.totalItems);
 
-      console.log(firstItem);
-      console.log(lastItem);
+      // console.log(firstItem);
+      // console.log(lastItem);
 
       for (let i = firstItem; i < lastItem; i++) {
         this.shopcommodityfilter.push(this.shopcommodity.pro[i]);
@@ -553,12 +577,16 @@ export default {
         // this.shopcommodity = "";
         this.shopcommodity = res.data;
         this.shopcommodityfilter = [];
-        for (let i = 1; i < 9; i++) {
+        for (let i = 0; i < this.shopcommodity["pro"].length; i++) {
           this.shopcommodityfilter.push(this.shopcommodity["pro"][i]);
+
+          if (i == 7) {
+            return;
+          }
         }
       });
     },
-    addCart(no) {
+    addCart(no, page = "f") {
       const api = this.path + "api_memberStatus.php";
 
       this.$http.post(api).then(res => {
@@ -580,17 +608,39 @@ export default {
           // 獲取 itemNo 欄位的資料，以 , 符號切成陣列
           const itmeArr = storage["itemNo"].split(",");
 
+          function change(e) {
+            if (page == "t") {
+              e.push("/main/member/shopping");
+            }
+          }
+
           // 如果編號 no 的商品沒有在 itemArr 這個陣列裡面，則新增進去
           if (itmeArr.indexOf(no) != -1) {
             alert("已經加入購物車了！");
+            change(this.$router);
           } else {
             storage["itemNo"] += no + ",";
+            this.$emit("setCart", storage["itemNo"]);
+            change(this.$router);
           }
         }
       });
     }
   },
   mounted() {
+    // 如果高度< search-wrapper，navbg就不顯示，> search-wrapper時顯示
+    $(function() {
+      $(window).scroll(function() {
+        var scrollVal = $(this).scrollTop();
+        if (scrollVal > 580) {
+          /* 如果滾動的物件捲動 > 500 則觸發指定的動作。*/
+          $("#nav_bg").addClass("navbg");
+        } else {
+          $("#nav_bg").removeClass("navbg");
+        }
+      });
+    });
+
     //------側邊欄開關------
     function showHideHam() {
       let filterPanel = document.getElementById("filterPanel");
